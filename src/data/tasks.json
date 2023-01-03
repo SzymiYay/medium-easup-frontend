@@ -1,0 +1,28 @@
+{
+  "todo": [
+    {
+      "title": "First task",
+      "content": "This is the first task to do."
+    },
+    {
+      "title": "Second task",
+      "content": "This is the second task to do."
+    },
+    {
+      "title": "Third task",
+      "content": "This is the third task to do."
+    }
+  ],
+  "doing": [
+    {
+      "title": "Doing task",
+      "content": "This is the first doing task"
+    }
+  ],
+  "done": [
+    {
+      "title": "Done task",
+      "content": "This is the first done task"
+    }
+  ]
+}

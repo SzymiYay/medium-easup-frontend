@@ -54,6 +54,44 @@ function Dashboard() {
     });
   }
 
+  function moveNoteRight(id, info) {
+    if (info === 0) {
+      let note = toDoNotes[id];
+      setDoingNotes(prevNotes => {
+        note.info = 1;
+        return [...prevNotes, note];
+      })
+      deleteToDoNote(id);
+    }
+    else if (info === 1) {
+      let note = doingNotes[id];
+      setDoneNotes(prevNotes => {
+        note.info = 2;
+        return [...prevNotes, note];
+      })
+      deleteDoingNote(id);
+    }
+  }
+
+  function moveNoteLeft(id, info) {
+    if (info === 1) {
+      let note = doingNotes[id];
+      setToDoNotes(prevNotes => {
+        note.info = 0;
+        return [...prevNotes, note];
+      })
+      deleteDoingNote(id);
+    }
+    else if (info === 2) {
+      let note = doneNotes[id];
+      setDoingNotes(prevNotes => {
+        note.info = 1;
+        return [...prevNotes, note];
+      })
+      deleteDoneNote(id);
+    }
+  }
+
   return (
     <div>
       <div className="wrapper">
@@ -65,8 +103,11 @@ function Dashboard() {
                 <Note
                   key={index}
                   id={index}
+                  info={0}
                   title={noteItem.title}
                   content={noteItem.content}
+                  onMoveLeft={moveNoteLeft}
+                  onMoveRight={moveNoteRight}
                   onDelete={deleteToDoNote}
                 />
               );
@@ -81,8 +122,11 @@ function Dashboard() {
                 <Note
                   key={index}
                   id={index}
+                  info={1}
                   title={noteItem.title}
                   content={noteItem.content}
+                  onMoveLeft={moveNoteLeft}
+                  onMoveRight={moveNoteRight}
                   onDelete={deleteDoingNote}
                 />
               );
@@ -97,8 +141,11 @@ function Dashboard() {
                 <Note
                   key={index}
                   id={index}
+                  info={2}
                   title={noteItem.title}
                   content={noteItem.content}
+                  onMoveLeft={moveNoteLeft}
+                  onMoveRight={moveNoteRight}
                   onDelete={deleteDoneNote}
                 />
               );

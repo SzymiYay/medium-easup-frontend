@@ -10,6 +10,14 @@ function Note(props) {
     props.onDelete(props.id);
   }
 
+  function moveRight() {
+    props.onMoveRight(props.id, props.info);
+  }
+
+  function moveLeft() {
+    props.onMoveLeft(props.id, props.info);
+  }
+
   return (
     <div className="note">
       <h1>{props.title}</h1>
@@ -17,10 +25,10 @@ function Note(props) {
       <button onClick={handleClick}>
         <DeleteIcon />
       </button>
-      <button>
+      <button onClick={moveRight}>
         <ArrowCircleRightIcon />
       </button>
-      <button>
+      <button onClick={moveLeft}>
         <ArrowCircleLeftIcon />
       </button>
     </div>

@@ -1,14 +1,15 @@
 h1, p {
-    font-family: Lato;
+    font-family: Lato, serif;
 }
 
 .cardDiv {
     width:41em;
-    height:22em;
+    height:26em;
+    padding: 30px;
     color:#777;
-    background-color:var(--main-background);
+    background-color:var(--second-background);
     margin:5% auto 0 auto;
-    border-radius:0.4em;
+    border-radius:0.9em;
     border-top-right-radius:0.37em;
     border-bottom-right-radius:0.37em;
     box-shadow:0 0 3px rgba(0,0,0,0.15);
@@ -30,13 +31,13 @@ h1, p {
 }
 
 .cardName {
-    color:#fff;
+    color: var(--text-color);
     font-size:2.2em;
     letter-spacing:1px;
 }
 
 .cardCompanyName {
-    color:#fff;
+    color:var(--text-color);
     font-size:1.2em;
     margin-top:0.2em;
 }
@@ -52,5 +53,5 @@ hr {
     font-family:'Arial',monospace;
     margin:1em 0;
     font-weight:700;
-    color: #fff;
+    color: var(--text-color);
 }

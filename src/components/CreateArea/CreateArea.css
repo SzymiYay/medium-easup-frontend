@@ -21,8 +21,8 @@ form.create-note button {
     position: absolute;
     right: 18px;
     bottom: -18px;
-    background: #f5ba13;
-    color: #fff;
+    background: var(--accent-color);
+    color: var(--text-color);
     border: none;
     border-radius: 50%;
     width: 36px;
@@ -41,8 +41,8 @@ form.create-note button {
     transform: rotate(2deg);
     padding: 0.2rem 1.2rem;
     border-radius: 20% 5% 20% 5%/5% 20% 25% 20%;
-    /* background-color: #aaaaa9; */
     font-size: 1.5rem;
+    color: white;
 }
 
 .MuiFab-label {

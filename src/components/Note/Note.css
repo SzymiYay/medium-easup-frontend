@@ -12,8 +12,10 @@
 .note h1 {
     font-size: 1.1em;
     margin-bottom: 6px;
+    /*background: var(--text-color);*/
 }
 .note p {
+    /*background: var(--text-color);*/
     font-size: 1.1em;
     margin-bottom: 10px;
     white-space: pre-wrap;
@@ -25,7 +27,7 @@
     float: right;
     margin-right: 10px;
     background: #fff;
-    color: #f5ba13;
+    color: var(--accent-color);
     border: none;
     width: 36px;
     height: 36px;

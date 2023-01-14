@@ -1,0 +1,25 @@
+.org-selection-component {
+    color: var(--text-color);
+    background: var(--main-background);
+    border-radius: 40px;
+    border-width: 2px;
+}
+
+.organization-icon {
+    background: var(--second-background);
+}
+
+.organization-icon:hover {
+    color: var(--accent-color);
+    font-weight: bold;
+    border-width: 3px;
+    border-color: var(--accent-color);
+}
+
+.organization-icon:active {
+    color: var(--interaction-color);
+    font-weight: bold;
+    border-width: 3px;
+    border-color: var(--interaction-color);
+}
+

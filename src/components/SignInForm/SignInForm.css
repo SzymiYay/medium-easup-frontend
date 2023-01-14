@@ -1,0 +1,89 @@
+/*.container {*/
+/*    display: flex;*/
+/*    flex-direction: column;*/
+/*    align-items: center;*/
+/*    align-content: center;*/
+/*    height: 800px;*/
+/*}*/
+
+.container2 {
+    place-self: center;
+    display:flex;
+    flex-direction: column;
+    place-content:center;
+    width: 400px;
+    height: 400px;
+}
+
+.sign-in-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    place-content: space-evenly;
+    background: var(--second-background);
+    border-radius: 40px;
+    height: 100%;
+    width: 100%;
+    padding: 10px;
+    color: var(--text-color);
+}
+
+.log-in {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+}
+
+.to-right{
+    text-align: right;
+}
+
+
+.email-input {
+    position: center;
+    padding: 10px;
+    width: 70%;
+}
+
+.password-input {
+    position: center;
+    padding: 10px;
+    width: 70%;
+}
+
+.input-field {
+    padding: 5px 0;
+}
+
+input {
+    border-radius: 30px;
+    padding: 5px;
+    width: 100%;
+    color: var(--main-background)
+}
+
+button {
+    border-radius: 30px;
+    border-width: 2px;
+    border-color: var(--accent-color);
+    color: var(--text-color);
+    font-size: large;
+    padding: 5px;
+    width: 100%;
+    background: var(--accent-color);
+}
+
+button:hover {
+    background: var(--interaction-color);
+    border-color: var(--interaction-color);
+    font-weight: bold;
+}
+
+button:active {
+    background: var(--text-color);
+    border-color: var(--interaction-color);
+    font-weight: bold;
+    color: var(--interaction-color);
+}

@@ -10,8 +10,8 @@ function CreateArea(props) {
   let [isExpanded, setExpanded] = useState(false);
 
   const [note, setNote] = useState({
-    title: "",
-    content: ""
+    name: "",
+    description: ""
   });
 
   function handleChange(event) {
@@ -28,8 +28,8 @@ function CreateArea(props) {
   function submitNote(event) {
     props.onAdd(note);
     setNote({
-      title: "",
-      content: ""
+      name: "",
+      description: ""
     });
     setExpanded(false);
     event.preventDefault();
@@ -41,7 +41,6 @@ function CreateArea(props) {
 
   return (
     <div className={props.section}>
-      <p className="title">{props.section.substring(0, 1).toUpperCase() + props.section.substring(1).toLowerCase()}</p>
       <form className="create-note">
         {isExpanded && <input
           name="title"

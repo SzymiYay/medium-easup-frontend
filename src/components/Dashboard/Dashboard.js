@@ -119,16 +119,16 @@ function Dashboard() {
           <ul>
             {doingNotes.map((noteItem, index) => {
               return (
-                <Note
-                  key={index}
-                  id={index}
-                  info={1}
-                  title={noteItem.title}
-                  content={noteItem.content}
-                  onMoveLeft={moveNoteLeft}
-                  onMoveRight={moveNoteRight}
-                  onDelete={deleteDoingNote}
-                />
+                  <Note
+                      key={index}
+                      id={index}
+                      info={1}
+                      title={noteItem.title}
+                      content={noteItem.content}
+                      onMoveLeft={moveNoteLeft}
+                      onMoveRight={moveNoteRight}
+                      onDelete={deleteDoingNote}
+                  />
               );
             })}
           </ul>

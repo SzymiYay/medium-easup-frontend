@@ -1,15 +1,24 @@
 import React from "react";
+import { Link } from 'react-router-dom';
 import './OrgSelectionComponent.css'
 import axios from '../../apis/easup'
 import useAxios from '../../hooks/useAxios'
 import LoadingIcon from '../LoadingIcon/LoadingIcon'
 
+
+
 function OrganizationIcon(props) {
+    function saveOrganizationId() {
+        localStorage.setItem("organizationId", JSON.stringify(props.organizationId))
+    }
+
   return (
-    <div className='organization-icon'>
-      <img src={props.photo} alt={props.name} className='logo'/>
-        <h2>{props.name}</h2>
-    </div>
+      <Link to='/today' onClick={saveOrganizationId}>
+        <div className='organization-icon'>
+            <img src={props.photo} alt={props.name} className='logo'/>
+            <h2>{props.name}</h2>
+        </div>
+      </Link>
   );
 }
 
@@ -17,7 +26,7 @@ function OrgSelectionComponent() {
   const [organizations, error, loading] = useAxios({
       axiosInstance: axios,
       method: 'GET',
-      url: '/organizations/user/1',
+      url: `/organizations/user/1`,
       requestConfig: {}
   })
 
@@ -40,6 +49,7 @@ function OrgSelectionComponent() {
                               <OrganizationIcon
                                   key={index}
                                   id={index}
+                                  organizationId={orgItem.id}
                                   name={orgItem.name}
                                   photo={orgItem.photo}
                               />

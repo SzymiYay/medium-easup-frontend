@@ -3,9 +3,11 @@ import OrgSelectionComponent from "../components/OrgSelectionComponent/OrgSelect
 
 function OrganizationsSelection() {
   return (
-    <div className='organization-selection'>
-      <OrgSelectionComponent/>
-    </div>
+      <>
+          <div className='organization-selection'>
+              <OrgSelectionComponent/>
+          </div>
+      </>
   );
 }
 

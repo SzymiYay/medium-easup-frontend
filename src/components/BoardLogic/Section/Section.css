@@ -1,0 +1,15 @@
+.section-component {
+    display: flex;
+    flex-flow: column;
+    margin-top: 10px;
+    text-align: center;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.section-title {
+    margin-bottom: 1rem;
+    padding: 0.2rem 1.2rem;
+    font-size: 1.5rem;
+    color: var(--text-color);
+}

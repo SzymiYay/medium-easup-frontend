@@ -1,14 +1,5 @@
-/*.container {*/
-/*    display: flex;*/
-/*    flex-direction: column;*/
-/*    align-items: center;*/
-/*    align-content: center;*/
-/*    height: 800px;*/
-/*}*/
-
 .container2 {
     place-self: center;
-    display:flex;
     flex-direction: column;
     place-content:center;
     width: 400px;
@@ -36,6 +27,10 @@
     padding: 10px;
 }
 
+.log-in p {
+    margin-top: 10px;
+}
+
 .to-right{
     text-align: right;
 }
@@ -51,6 +46,10 @@
     position: center;
     padding: 10px;
     width: 70%;
+}
+
+.password-input input-field input{
+
 }
 
 .input-field {
@@ -86,4 +85,27 @@ button:active {
     border-color: var(--interaction-color);
     font-weight: bold;
     color: var(--interaction-color);
+}
+
+.event-handler-div {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    margin-top: 20px;
+
+    border: 1px solid;
+    /*padding: 15px 10px 15px 50px;*/
+    padding: 15px;
+    background-repeat: no-repeat;
+    background-position: 10px center;
+
+    border-radius: 30px;
+
+    color: var(--interaction-color);
+    background-color: var(--second-background);
+    text-align: center;
+}
+
+.error-message {
+    color: var(--interaction-color);
+    font-size: 20px;
 }

@@ -33,10 +33,10 @@ function Section(props) {
 
             {!loading && !error && section &&
             <>
-                <h2 className="section-title">{section[0].name}</h2>
+                <h2 className="section-title">{section.name}</h2>
                 {/*<CreateArea onAdd={}/>*/}
                 <ul className='section-tasks-list'>
-                    {section[0].tasks.map((taskItem, index) => {
+                    {section.tasks.map((taskItem, index) => {
                         return (
                             <Task
                                 key={index}

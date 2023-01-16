@@ -14,7 +14,7 @@ const SignInForm = () => {
             axiosInstance: axios,
             method: 'post',
             url: '/users/login',
-            data: {
+            requestConfig: {
                 email: document.getElementById("email").value,
                 password: document.getElementById("password").value
             }

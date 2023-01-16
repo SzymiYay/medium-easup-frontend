@@ -6,16 +6,20 @@ import axios from "../../../apis/easup";
 import LoadingIcon from "../../LoadingIcon/LoadingIcon";
 
 
-function Board(props) {
+function Board() {
     const [board, error, loading, refetch] = useAxios({
         axiosInstance: axios,
         method: 'GET',
-        url: `/boards/${props.boardId}`,
+        url: `/boards/${localStorage.getItem("boardId")}`,
         requestConfig: {}
     })
 
+    function reload() {
+        refetch();
+    }
+
     return (
-        <div>
+        <>
             {loading && <LoadingIcon/>}
 
             {!loading && error && <h1>{error}</h1>}
@@ -24,7 +28,7 @@ function Board(props) {
 
             {!loading && !error && board &&
                 <div className="board-component">
-                    {board[0].sections.map((sectionItem, index) => {
+                    {board.sections.map((sectionItem, index) => {
                         return (
                             <div className="section-div">
                                 <Section
@@ -39,7 +43,7 @@ function Board(props) {
                     })}
                 </div>
             }
-        </div>
+        </>
     );
 }
 

@@ -1,14 +1,16 @@
 import React from 'react';
 
+import Today from "../components/Today/Today";
 import Navbar from "../components/Navbar/Navbar";
 
-function Today() {
+
+function TodayPage() {
     return (
         <div>
             <Navbar/>
-            <h1>Today tasks</h1>
+            <Today />
         </div>
     )
 }
 
-export default Today;
+export default TodayPage;

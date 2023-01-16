@@ -36,7 +36,7 @@ h1, p {
     letter-spacing:1px;
 }
 
-.cardCompanyName {
+.cardNickname {
     color:var(--text-color);
     font-size:1.2em;
     margin-top:0.2em;
@@ -49,7 +49,7 @@ hr {
     width:85%;
 }
 
-.cardPhoneNumber, .cardEmail {
+.cardDescription, .cardEmail {
     font-family:'Arial',monospace;
     margin:1em 0;
     font-weight:700;

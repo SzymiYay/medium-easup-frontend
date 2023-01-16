@@ -1,31 +1,28 @@
 import React, { useState } from 'react';
-import * as FaIcons from 'react-icons/fa';
-import * as AiIcons from 'react-icons/ai';
 import { Link } from 'react-router-dom';
 import { SidebarData } from './SidebarData';
 import './Navbar.css';
 import { IconContext } from 'react-icons';
-
+import useAxios from "../../hooks/useAxios";
+import axios from "../../apis/easup";
+import NavbarProject from "./NavbarProject"
+import LoadingIcon from "../LoadingIcon/LoadingIcon";
 
 function Navbar() {
-  const [sidebar, setSidebar] = useState(false);
 
-  const showSidebar = () => setSidebar(!sidebar);
+  const [organization, error, loading, refetch] = useAxios({
+    axiosInstance: axios,
+    method: 'GET',
+    url: `/organizations/${localStorage.getItem("organizationId")}`,
+    requestConfig: {}
+  })
 
   return (
-    <>
-      <IconContext.Provider value={{ color: '#fff' }}>
-        <div className='navbar'>
-          <Link to='#' className='menu-bars'>
-            <FaIcons.FaBars onClick={showSidebar} />
-          </Link>
-        </div>
-        <nav className={sidebar ? 'nav-menu active' : 'nav-menu'}>
-          <ul className='nav-menu-items' onClick={showSidebar}>
-            <li className='navbar-toggle'>
-              <Link to='#' className='menu-bars'>
-                <AiIcons.AiOutlineClose />
-              </Link>
+        <div className='nav-menu'>
+          <IconContext.Provider value={{ color: 'var(--text-color)' }}>
+          <ul className='nav-menu-items'>
+            <li>
+              <h1 className='navbar-organization-name'>{organization.name}</h1>
             </li>
             {SidebarData.map((item, index) => {
               return (
@@ -37,10 +34,31 @@ function Navbar() {
                 </li>
               );
             })}
+
+            {loading && <LoadingIcon/>}
+
+            {!loading && error && <h1>{error}</h1>}
+
+            {!loading && !error && !organization && <h1>Something went wrong</h1>}
+
+            {!loading && !error && organization &&
+                <>
+                  {organization.projects.map((item, index) => {
+                    return (
+                        <li key={index}>
+                          <NavbarProject projectId={item.id}/>
+                        </li>
+                    )
+                  })}
+                </>
+            }
           </ul>
-        </nav>
-      </IconContext.Provider>
-    </>
+          </IconContext.Provider>
+
+          <div className='easup-mark'>
+            <h1 className='navbar-organization-name'>easup</h1>
+          </div>
+        </div>
   );
 }
 

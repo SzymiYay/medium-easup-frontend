@@ -6,8 +6,7 @@ import Navbar from "../components/Navbar/Navbar";
 
 function TasksPage() {
     return (
-        <div className='tasks'>
-            <Navbar/>
+        <div className='in-navbar-layout-container'>
             <Tasks />
         </div>
     )

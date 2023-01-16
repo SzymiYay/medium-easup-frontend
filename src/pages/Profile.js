@@ -6,10 +6,8 @@ import Footer from "../components/Footer/Footer";
 
 function Profile() {
   return (
-    <div className='profile'>
-        <Navbar/>
+    <div className='in-navbar-layout-container'>
       <ProfileForm />
-      {/*<Footer />*/}
     </div>
   )
 }

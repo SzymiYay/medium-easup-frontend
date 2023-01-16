@@ -18,7 +18,7 @@ const SignInForm = () => {
                 email: document.getElementById("email").value,
                 password: document.getElementById("password").value
             }
-        }).then(res => console.log('response' + res)).catch(err => console.log('error' + err));
+        });
     }
 
     const LogIn = () => {

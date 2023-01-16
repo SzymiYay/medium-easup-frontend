@@ -17,12 +17,16 @@ function Navbar() {
     requestConfig: {}
   })
 
+  function reload(){
+    refetch();
+  }
+
   return (
         <div className='nav-menu'>
           <IconContext.Provider value={{ color: 'var(--text-color)' }}>
-          <ul className='nav-menu-items'>
+          <ul className='nav-menu-items' onClick={reload}>
             <li>
-              <h1 className="navbar-organization-name"><a href="/organization" className='navbar-organization-name'>{organization.name}</a></h1>
+              <h1 className="navbar-organization-name"><a href="/app/organization" className='navbar-organization-name'>{organization.name}</a></h1>
             </li>
             {SidebarData.map((item, index) => {
               return (

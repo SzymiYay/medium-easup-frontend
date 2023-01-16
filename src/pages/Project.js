@@ -6,11 +6,9 @@ import Footer from "../components/Footer/Footer";
 function Project() {
     return (
         <>
-            <Navbar/>
-            <div className='project'>
+            <div className='in-navbar-layout-container'>
                 <ProjectDetails/>
             </div>
-            <Footer/>
         </>
     );
 }

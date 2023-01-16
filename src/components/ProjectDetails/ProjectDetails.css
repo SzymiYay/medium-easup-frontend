@@ -35,17 +35,23 @@
     padding: 10px;
 }
 
+.add-new-board-a {
+    display: flex;
+}
+
 .board-icon {
     display: flex;
     flex-flow: column;
     justify-content: space-evenly;
-    padding: 10px;
+    position: relative;
+    padding: 25px;
     border-style: solid;
     border-width: 2px;
     border-color: var(--text-color);
+    background-color: var(--second-background);
     border-radius: 10px;
-    min-width: 250px;
-    min-height: 150px;
+    min-width: 150px;
+    min-height: 75px;
 }
 
 .BoardIcon:hover{
@@ -55,4 +61,20 @@
 .BoardIcon:active{
     border-width: 3px;
     border-color: var(--interaction-color);
+}
+
+.delete-icon {
+    color: var(--text-color);
+    position: absolute;
+    padding: 8px;
+    top: 0;
+    right: 0;
+}
+
+.delete-icon:hover {
+    color: var(--accent-color);
+}
+
+.delete-icon:active {
+    color: var(--interaction-color);
 }

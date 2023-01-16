@@ -13,3 +13,39 @@
     font-size: 1.5rem;
     color: var(--text-color);
 }
+
+.add-section-component {
+    display: flex;
+    flex-flow: column;
+    margin-top: 10px;
+    text-align: center;
+    overflow-x: hidden;
+    overflow-y: auto;
+    justify-content: center;
+    background-color: var(--second-background);
+    border-radius: 10px;
+    color: var(--text-color);
+}
+
+.add-section-component:hover{
+    border-style: solid;
+    border-width: 1px;
+    border-color: var(--accent-color);
+    color: var(--accent-color);
+    cursor: pointer;
+}
+
+.add-section-component h1:hover{
+    color: var(--accent-color);
+    cursor: pointer;
+} {
+
+}
+
+.add-section-component:active {
+    border-style: solid;
+    border-width: 2px;
+    border-color: var(--interaction-color);
+    color: var(--interaction-color);
+    cursor: pointer;
+}

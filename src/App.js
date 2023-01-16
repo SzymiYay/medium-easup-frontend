@@ -8,6 +8,7 @@ import BoardPage from './pages/BoardPage'
 import OrganizationsSelection from "./pages/OrganizationsSelection";
 import Project from "./pages/Project";
 import Organization from "./pages/Organization";
+import NavbarLayout from "./pages/NavbarLayout";
 
 function App() {
   return (
@@ -15,12 +16,14 @@ function App() {
       <Router>
         <Routes>
           <Route exact path='/'  element={<SignIn />} />
-          <Route path='/board' element={<BoardPage />} />
           <Route path='/organizations' element={<OrganizationsSelection />} />
-          <Route path='/organization' element={<Organization />} />
-          <Route path='/profile' element={<Profile />}/>
-          <Route path='/tasks' element={<TasksPage />} />
-          <Route path='/project' element={<Project />} />
+          <Route exact path='/app' element={<NavbarLayout/>}>
+            <Route path='/app/organization' element={<Organization />} />
+            <Route path='/app/profile' element={<Profile />}/>
+            <Route path='/app/tasks' element={<TasksPage />} />
+            <Route path='/app/project' element={<Project />} />
+            <Route path='/app/board' element={<BoardPage />} />
+          </Route>
         </Routes>
       </Router>
     </>

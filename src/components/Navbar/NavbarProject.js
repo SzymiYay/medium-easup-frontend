@@ -48,7 +48,7 @@ function NavbarProject(props) {
               {!loading && !error && project &&
                 <>
                     <div className='nav-text projects'>
-                        <Link  onClick={saveProjectId}>
+                        <Link to='/app/project' onClick={saveProjectId}>
                             <h3>{project.name}</h3>
                         </Link>
                     </div>

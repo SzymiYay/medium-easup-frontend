@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import DeleteIcon from "@material-ui/icons/Delete"
 import ArrowCircleLeftIcon from '@mui/icons-material/ArrowCircleLeft';
 import ArrowCircleRightIcon from '@mui/icons-material/ArrowCircleRight';
@@ -6,14 +6,40 @@ import './Task.css'
 import useAxios from "../../../hooks/useAxios";
 import axios from "../../../apis/easup";
 import LoadingIcon from "../../LoadingIcon/LoadingIcon";
+import useAxiosFunction from "../../../hooks/useAxiosFunction";
 
 function Task(props) {
+    const [time, setTime] = useState(Date.now());
+    useEffect( () => {
+          const interval = setInterval(() => {
+              setTime(Date.now());
+              refetch();
+          }, 2000);
+          return () => {
+              refetch();
+              clearInterval(interval)
+          };
+      }, []
+    );
+
     const [task, error, loading, refetch] = useAxios({
         axiosInstance: axios,
         method: 'GET',
         url: `/tasks/${props.taskId}`,
         requestConfig: {}
     })
+
+    const [,,,axiosFetch] = useAxiosFunction();
+
+    const deleteTask = () => {
+        axiosFetch({
+            axiosInstance: axios,
+            method: 'delete',
+            url: `/tasks/${props.taskId}`,
+            requestConfig : {}
+        });
+        props.sectionRefetch();
+    }
 
     return (
         <div className="task">
@@ -34,7 +60,7 @@ function Task(props) {
                         <button>
                             <ArrowCircleRightIcon/>
                         </button>
-                        <button>
+                        <button onClick={deleteTask}>
                             <DeleteIcon/>
                         </button>
                     </div>

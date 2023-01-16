@@ -9,7 +9,7 @@ function CreateArea(props) {
 
   let [isExpanded, setExpanded] = useState(false);
 
-  const [note, setNote] = useState({
+  const [task, setTask] = useState({
     name: "",
     description: ""
   });
@@ -17,7 +17,7 @@ function CreateArea(props) {
   function handleChange(event) {
     const { name, value } = event.target;
 
-    setNote(prevNote => {
+    setTask(prevNote => {
       return {
         ...prevNote,
         [name]: value
@@ -25,9 +25,9 @@ function CreateArea(props) {
     });
   }
 
-  function submitNote(event) {
-    props.onAdd(note);
-    setNote({
+  function submitTask(event) {
+    props.onAdd();
+    setTask({
       name: "",
       description: ""
     });
@@ -43,21 +43,23 @@ function CreateArea(props) {
     <div className="task">
       <form className="create-note">
         {isExpanded && <input
-          name="title"
+          name="name"
           onChange={handleChange}
-          value={note.title}
+          value={task.name}
           placeholder="Title"
+          id="task-name"
         />}
         <textarea
-          name="content"
+          name="description"
           onClick={expand}
           onChange={handleChange}
-          value={note.content}
+          value={task.description}
           placeholder="Take a note..."
           rows={isExpanded ? 3 : 1}
+          id="task-description"
         />
         <Zoom in={isExpanded}>
-          <Fab onClick={submitNote}>
+          <Fab onClick={submitTask}>
             <AddIcon />
           </Fab>
         </Zoom>

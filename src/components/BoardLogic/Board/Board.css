@@ -1,8 +1,7 @@
 .board-component {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 30px;
-    grid-auto-rows: minmax(100px, auto);
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
     overflow-x: auto;
     overflow-y: hidden;
 }
@@ -17,8 +16,7 @@
     /* float: left; */
 
     width: 100%;
-    height: auto;
-    min-height: 350px;
+    height: fit-content;
     max-width: 400px;
     min-width: 250px;
     background: var(--second-background);

@@ -25,8 +25,8 @@ function Task(props) {
 
             {!loading && !error && task &&
                 <>
-                    <h1>{task[0].name}</h1>
-                    <p>{task[0].description}</p>
+                    <h1>{task.name}</h1>
+                    <p>{task.description}</p>
                     <div className='task-buttons'>
                         <button>
                             <ArrowCircleLeftIcon/>

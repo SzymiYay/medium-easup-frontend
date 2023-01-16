@@ -7,7 +7,7 @@ import useAxios from "../../../hooks/useAxios";
 import axios from "../../../apis/easup";
 import Task from "../Task/Task";
 import LoadingIcon from "../../LoadingIcon/LoadingIcon";
-// import CreateArea from "../../CreateArea/CreateArea"
+import CreateTask from "../CreateTask/CreateTask";
 
 // sectionId, sectionTitle, sectionDescription
 function Section(props) {
@@ -33,10 +33,10 @@ function Section(props) {
 
             {!loading && !error && section &&
             <>
-                <h2 className="section-title">{section[0].name}</h2>
-                {/*<CreateArea onAdd={}/>*/}
+                <h2 className="section-title">{section.name}</h2>
+                <CreateTask />
                 <ul className='section-tasks-list'>
-                    {section[0].tasks.map((taskItem, index) => {
+                    {section.tasks.map((taskItem, index) => {
                         return (
                             <Task
                                 key={index}

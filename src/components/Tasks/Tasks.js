@@ -2,10 +2,10 @@ import React from "react";
 import useAxios from "../../hooks/useAxios";
 import axios from "../../apis/easup";
 import Task from "../BoardLogic/Task/Task";
-import './Today.css'
+import './Tasks.css'
 import LoadingIcon from "../LoadingIcon/LoadingIcon";
 
-function Today() {
+function Tasks() {
 
     const [tasks, error, loading] = useAxios({
         axiosInstance: axios,
@@ -32,15 +32,15 @@ function Today() {
         {!loading && !error && tasks &&
             <div className="all-tasks">
                 {tasks.map((taskItem, index) => {
-                    if (Date.parse(taskItem.deadline) < Date.parse(today)) {
+                    // if (Date.parse(taskItem.deadline) < Date.parse(today)) {
                         return (
                             <div className="task-item">
                                 <h1>{taskItem.name}</h1>
                                 <p>{taskItem.description} </p>
                             </div>
                         )
-                    }
-                    return null;
+                    // }
+                    // return null;
                 })}
             </div>}
         </>
@@ -48,4 +48,4 @@ function Today() {
     );
 }
 
-export default Today;
+export default Tasks;

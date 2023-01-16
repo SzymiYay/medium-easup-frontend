@@ -13,7 +13,7 @@ function OrganizationIcon(props) {
     }
 
   return (
-      <Link to='/today' onClick={saveOrganizationId}>
+      <Link to='/tasks' onClick={saveOrganizationId}>
         <div className='organization-icon'>
             <img src={props.photo} alt={props.name} className='logo'/>
             <h2>{props.name}</h2>

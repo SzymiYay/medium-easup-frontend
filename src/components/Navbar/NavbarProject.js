@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import {Link} from "react-router-dom";
 
 import NavbarBoard from "./NavbarBoard"
@@ -12,6 +12,17 @@ import './Navbar.css';
 
 function NavbarProject(props) {
 
+    let [isExpanded, setExpanded] = useState(false);
+
+    function reduce(event) {
+      setExpanded(false);
+      event.preventDefault();
+    }
+
+    function expand() {
+      setExpanded(true);
+    }
+
     const [project, error, loading] = useAxios({
         axiosInstance: axios,
         method: 'GET',
@@ -20,7 +31,8 @@ function NavbarProject(props) {
     })
 
     function saveProjectId() {
-        localStorage.setItem("projectId", JSON.stringify(props.id));
+        localStorage.setItem("projectId", JSON.stringify(props.projectId));
+        expand();
     }
 
   return (
@@ -35,12 +47,12 @@ function NavbarProject(props) {
 
               {!loading && !error && project &&
                 <>
-                    <li className='nav-text projects'>
-                        <Link to='/project' onClick={saveProjectId}>
+                    <div className='nav-text projects'>
+                        <Link  onClick={saveProjectId}>
                             <h3>{project.name}</h3>
                         </Link>
-                    </li>
-                    {project.boards.map((item, index) => {
+                    </div>
+                    {isExpanded && project.boards.map((item, index) => {
                         return (
                             <li key={index}  className='nav-text projects'>
                                 <NavbarBoard boardId={item.id} boardName={item.name}/>

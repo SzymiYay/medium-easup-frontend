@@ -2,8 +2,11 @@ import React from "react";
 import {Link} from "react-router-dom";
 
 import './Navbar.css';
+import useAxios from "../../hooks/useAxios";
+import axios from "../../apis/easup";
 
 function NavbarBoard(props) {
+
     function saveBoardId(){
         localStorage.setItem("boardId", JSON.stringify(props.boardId));
     }

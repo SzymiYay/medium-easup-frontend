@@ -1,14 +1,14 @@
 import React from 'react';
 
-import ProfileForm from "../components/ProfileForm/ProfileForm";
+import OrganizationForm from "../components/OrganizationForm/OrganizationForm";
 import Navbar from "../components/Navbar/Navbar";
 import Footer from "../components/Footer/Footer";
 
 function Profile() {
   return (
     <div className='profile'>
-        <Navbar/>
-      <ProfileForm />
+      <Navbar/>
+      <OrganizationForm />
       {/*<Footer />*/}
     </div>
   )

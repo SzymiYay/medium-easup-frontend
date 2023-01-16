@@ -22,7 +22,7 @@ function Navbar() {
           <IconContext.Provider value={{ color: 'var(--text-color)' }}>
           <ul className='nav-menu-items'>
             <li>
-              <h1 className='navbar-organization-name'>{organization.name}</h1>
+              <h1 className="navbar-organization-name"><a href="/organization" className='navbar-organization-name'>{organization.name}</a></h1>
             </li>
             {SidebarData.map((item, index) => {
               return (
@@ -45,9 +45,11 @@ function Navbar() {
                 <>
                   {organization.projects.map((item, index) => {
                     return (
-                        <li key={index}>
+                        // <li key={index}>
+
                           <NavbarProject projectId={item.id}/>
-                        </li>
+
+                        // </li>
                     )
                   })}
                 </>

@@ -58,7 +58,8 @@ const SignInForm = () => {
     }
 
     function saveUserId(){
-        localStorage.setItem("userId", JSON.stringify(user.id))
+        localStorage.setItem("userId", JSON.stringify(user.id));
+        navigate("/organizations");
     }
 
     const EventMessageComponent = (props) => {
@@ -84,7 +85,7 @@ const SignInForm = () => {
 
             {loading && <LoadingIcon/>}
 
-            {!loading && !error && user && user.id && saveUserId() && navigate("/organizations")}
+            {!loading && !error && user && user.id && saveUserId()}
 
     </div>
   );

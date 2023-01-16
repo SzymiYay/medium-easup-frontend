@@ -16,7 +16,7 @@ function App() {
       <Router>
         <Routes>
           <Route exact path='/'  element={<SignIn />} />
-          <Route path='/organizations' element={<OrganizationsSelection />} />
+          <Route exact path='/organizations' element={<OrganizationsSelection />} />
           <Route exact path='/app' element={<NavbarLayout/>}>
             <Route path='/app/organization' element={<Organization />} />
             <Route path='/app/profile' element={<Profile />}/>

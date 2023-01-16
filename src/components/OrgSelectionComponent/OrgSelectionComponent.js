@@ -51,7 +51,7 @@ function OrgSelectionComponent() {
                                   id={index}
                                   organizationId={orgItem.id}
                                   name={orgItem.name}
-                                  photo={orgItem.photo}
+                                  photo={orgItem.logo}
                               />
                           );
                       })}
